@@ -23,15 +23,15 @@ public class EmployeeController {
         this.employeeRespository = employeeRespository;
     }
 
+   @GetMapping
+    public List<Employee> getAllEmployees(){
+        return employeeRespository.findAll();
+    }
+
 //    @GetMapping
 //    public List<Employee> getAllEmployees(){
-//        return employeeRespository.findAll();
+//        return employeeRespository.findByFirstName("Ali");
 //    }
-
-    @GetMapping
-    public List<Employee> getAllEmployees(){
-        return employeeRespository.findByFirstName("Ali");
-    }
 
     // build create employee Rest Api
     @PostMapping("create-from-json/")
